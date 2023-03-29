@@ -25,7 +25,7 @@ const appApi = createApi({
 
         logoutUser: builder.mutation({
             query: (payload) => ({
-                url: 'logout',
+                url: '/logout',
                 method: 'DELETE',
                 body: payload,
             }),

@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import {useSignupUserMutation} from '../services/appApi'
+import { Link,useNavigate } from 'react-router-dom'
 import './Signup.css'
 import selpic from '../assets/selpic.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,6 +15,8 @@ function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const [signupUser, {isLoading,error}] = useSignupUserMutation();
+  const navigate = useNavigate();
 
   //Image state
   const [image, setImage] = useState(null)
@@ -59,6 +62,12 @@ function Signup() {
     if (!image) return alert('please upload your profile picture')
     const url = await uploadImage(image)
     console.log(url)
+    signupUser({name, email,password,picture:url}).then(({data})=>{
+      if(data){
+        console.log(data);
+        navigate("/chat")
+      }
+    })
   }
 
 

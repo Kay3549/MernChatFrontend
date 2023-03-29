@@ -13,10 +13,9 @@ export const userSlice = createSlice({
         builder.addMatcher(appApi.endpoints.signupUser.matchFulfilled,(state,{payload})=> payload);
         builder.addMatcher(appApi.endpoints.loginUser.matchFulfilled,(state,{payload})=> payload);
         builder.addMatcher(appApi.endpoints.logoutUser.matchFulfilled, ()=>null);
-
-    }
+    },
 
 })
 
-export const {addNotifications,resetNotifications} =userSlice.actions
+export const {addNotifications,resetNotifications} =userSlice.actions;
 export default userSlice.reducer;
