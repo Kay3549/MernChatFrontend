@@ -33,7 +33,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <h2>Available rooms</h2>
+            <h2>Available rooms</h2> 
             <ListGroup>
                 {rooms.map((room, idx) => (
                     <ListGroup.Item key={idx}>{room}</ListGroup.Item>
