@@ -18,7 +18,7 @@ const Sidebar = () => {
     }, []);
 
     socket.off("new-user").on("new-user", (payload) => {
-        setMembers(payload)
+        setMembers(payload) 
     })
 
     function getRooms() {
