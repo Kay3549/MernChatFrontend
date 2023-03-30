@@ -70,7 +70,7 @@ const Sidebar = () => {
             <ListGroup>
                 {rooms.map((room, idx) => (
                     <ListGroup.Item key={idx} onClick={() => joinRoom(room)} active={room == currentRoom} style={{ cursor: 'pointer', display: 'flex', justifyContent: 'space-between' }} >
-                        {room} {currentRoom !== room && <span className='badge rounded-pill bg-primary'>{user.newMessages[room]}</span>}
+                        {room} {currentRoom !== room && <span className='badge rounded-pill bg-primary'>{user.newMessage[room]}</span>}
                     </ListGroup.Item>
                 ))}
             </ListGroup>
