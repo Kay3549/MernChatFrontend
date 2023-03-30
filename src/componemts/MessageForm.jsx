@@ -39,7 +39,6 @@ const MessageForm = () => {
         socket.emit("message-room", roomId, message, user, time, todayDate)
         setMessage("")
     }
-    console.log(messages)
     return (
         <>
             <div className='messages-output'>
