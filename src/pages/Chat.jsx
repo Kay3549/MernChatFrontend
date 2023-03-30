@@ -6,7 +6,7 @@ import Sidebar from '../componemts/Sidebar';
 
 function Chat() {
   return (
-    <Container>
+    <Container> 
       <Row>
         <Col md={4}>
           <Sidebar></Sidebar>
