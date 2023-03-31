@@ -6,8 +6,9 @@ export const userSlice = createSlice({
     initialState: null,
     reducers: {
         addNotifications: (state, { payload }) => {
+            console.log(state.newMessage[payload])
             if (state.newMessage[payload]) {
-                state.newMessage[payload] = state.newMessages[payload] + 1
+                state.newMessage[payload] = state.newMessage[payload] + 1
             } else {
                 state.newMessage[payload] = 1;
             }
